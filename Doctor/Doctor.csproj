@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A082FA38-29CC-440F-8B04-996DCB3F6CF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Doctor</RootNamespace>
+    <AssemblyName>Doctor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.6.6823.24527, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.6.6823.24527\lib\net35-client\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseDatabase.net.3.3.3\lib\netstandard1.1\Firebase.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseAuthentication.net.3.2.0\lib\netstandard1.1\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Storage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseStorage.net.1.0.3\lib\netstandard1.1\Firebase.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="TallComponents.PDF.Kit, Version=4.0.124.0, Culture=neutral, PublicKeyToken=76bf2dedaa68ccb5, processorArchitecture=MSIL">
+      <HintPath>..\packages\TallComponents.PDFKit.4.0.124\lib\net40\TallComponents.PDF.Kit.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="appointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="appointment.Designer.cs">
+      <DependentUpon>appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication_Form.Designer.cs">
+      <DependentUpon>Authentication_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendarView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="calendarView.Designer.cs">
+      <DependentUpon>calendarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmmessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="confirmmessage.Designer.cs">
+      <DependentUpon>confirmmessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctor.cs" />
+    <Compile Include="DoctorDBDataSet.cs">
+      <DependentUpon>DoctorDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoctorDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Firebase_Class.cs" />
+    <Compile Include="Image_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image_Form.Designer.cs">
+      <DependentUpon>Image_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IViewObject.cs" />
+    <Compile Include="message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="message.Designer.cs">
+      <DependentUpon>message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module1.cs" />
+    <Compile Include="Mod_Functions.cs" />
+    <Compile Include="newAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="newAppointment.Designer.cs">
+      <DependentUpon>newAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="newDocument.Designer.cs">
+      <DependentUpon>newDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="newPayment.Designer.cs">
+      <DependentUpon>newPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newVaccination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="newVaccination.Designer.cs">
+      <DependentUpon>newVaccination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientData.cs" />
+    <Compile Include="PrescriptionDocument.cs" />
+    <Compile Include="Password_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password_Form.Designer.cs">
+      <DependentUpon>Password_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="patient.Designer.cs">
+      <DependentUpon>patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="payment.Designer.cs">
+      <DependentUpon>payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pdfhelper.cs" />
+    <Compile Include="PenMemory_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PenMemory_Form.Designer.cs">
+      <DependentUpon>PenMemory_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PNFStroke.cs" />
+    <Compile Include="profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="profile.Designer.cs">
+      <DependentUpon>profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash_Form.Designer.cs">
+      <DependentUpon>Splash_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Class.cs" />
+    <Compile Include="Update_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Form.Designer.cs">
+      <DependentUpon>Update_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_Software_Class.cs" />
+    <Compile Include="User_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Form.Designer.cs">
+      <DependentUpon>User_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vaccination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vaccination.Designer.cs">
+      <DependentUpon>vaccination.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="appointment.resx">
+      <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication_Form.resx">
+      <DependentUpon>Authentication_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendarView.resx">
+      <DependentUpon>calendarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmmessage.resx">
+      <DependentUpon>confirmmessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image_Form.resx">
+      <DependentUpon>Image_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="message.resx">
+      <DependentUpon>message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newAppointment.resx">
+      <DependentUpon>newAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newDocument.resx">
+      <DependentUpon>newDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newPayment.resx">
+      <DependentUpon>newPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newVaccination.resx">
+      <DependentUpon>newVaccination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password_Form.resx">
+      <DependentUpon>Password_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="patient.resx">
+      <DependentUpon>patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payment.resx">
+      <DependentUpon>payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PenMemory_Form.resx">
+      <DependentUpon>PenMemory_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile.resx">
+      <DependentUpon>profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="report.resx">
+      <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash_Form.resx">
+      <DependentUpon>Splash_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Form.resx">
+      <DependentUpon>Update_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Form.resx">
+      <DependentUpon>User_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vaccination.resx">
+      <DependentUpon>vaccination.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DoctorDBDataSet.xsc">
+      <DependentUpon>DoctorDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DoctorDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoctorDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoctorDBDataSet.xss">
+      <DependentUpon>DoctorDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\ebrima.ttf" />
+    <None Include="Resources\ebrimabd.ttf" />
+    <None Include="Resources\timeburnerbold.ttf" />
+    <None Include="Resources\timeburnernormal.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank_prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calenderbase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clinMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clinMDlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorback.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorLogin1.0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorminize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\completed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halfbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlightsave.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login2.0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overdue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal_info_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savedone.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\today.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknownstatus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upcoming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vaccination.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\makeApayment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calendar.NET\Calendar.NET.csproj">
+      <Project>{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}</Project>
+      <Name>Calendar.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointmentIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paymentIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vaccinationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DoctorDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DoctorDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DoctorDB.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\No_Image_Available.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

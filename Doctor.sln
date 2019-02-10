@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor", "Doctor\Doctor.csproj", "{A082FA38-29CC-440F-8B04-996DCB3F6CF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.NET", "Calendar.NET\Calendar.NET.csproj", "{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A082FA38-29CC-440F-8B04-996DCB3F6CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A082FA38-29CC-440F-8B04-996DCB3F6CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A082FA38-29CC-440F-8B04-996DCB3F6CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A082FA38-29CC-440F-8B04-996DCB3F6CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9780E7E-C872-44FB-BC4F-A2B8F7278B1D}
+	EndGlobalSection
+EndGlobal
